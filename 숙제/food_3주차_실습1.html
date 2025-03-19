@@ -15,6 +15,19 @@
     <style>
         /* 구글 폰트 import url 넣어주세요. */
         /* 구글 폰트 CSS rules를 전체 적용해 주세요. */
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&display=swap');
+
+        .gowun-dodum-regular {
+            font-family: "Gowun Dodum", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .black-han-sans-regular {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
 
         body {
             background-color: white;
@@ -29,6 +42,13 @@
             height: 650px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header p {
+            display: flex;
+            justify-content: center;
         }
 
         .header>h1 {
@@ -62,6 +82,7 @@
         }
 
         .post {
+            margin: 0 !important;
             width: 500px;
             margin: 20px 0px 1px 20px;
             padding: 20px;
@@ -141,6 +162,7 @@
         }
 
         .card-button {
+            width: 100px;
             background-color: orange;
             color: white;
             text-align: center;
@@ -232,7 +254,8 @@
                     </svg>
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <img src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/food.png" class="icon"></li>
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/food.png"
+                        class="icon"></li>
                     <li><a href="#" class="nav-link px-2 text-danger">Foodcourt</a></li>
                     <li><a href="#" class="nav-link px-2 ">홈</a></li>
                     <li><a href="#" class="nav-link px-2 ">한식</a></li>
@@ -260,38 +283,49 @@
         - 필요 없는 버튼, div를 적절하게 삭제
     - jumbotron <h1> 태그안에 `Blank Han Sans` 폰트 스타일을 적용해 주세요. -->
 
-    <!-- 부트스트랩 인풋 박스 적용-->
-    <div class="post" id="input-card">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">음식 이미지 주소</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="foodTitle" placeholder="영화 제목">
-            <label for="foodTitle">음식명</label>
-        </div>
-        <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button">별점</button>
-            <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-                <option selected>별점 선택</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">추천 이유</label>
-        </div>
-        <div class="button2">
-            <button type="button" class="btn btn-danger" id="addBtn"> 기록하기 </button>
+    <div class="header">
+        <h1 class="display-5 fw-bold black-han-sans-regular">스파르타 푸드파이터</h1>
+        <p class="col-md-8 fs-4">본인만의 맛집을 소개하는 사이트입니다.<br>맛집을 소개해 주세요!</p>
+
+
+        <!-- 부트스트랩 인풋 박스 적용-->
+        <div class="post" id="input-card">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">음식 이미지 주소</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="foodTitle" placeholder="영화 제목">
+                <label for="foodTitle">음식명</label>
+            </div>
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button">별점</button>
+                <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                    <option selected>별점 선택</option>
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">추천 이유</label>
+            </div>
+            <div class="button2">
+                <button type="button" class="btn btn-danger" id="addBtn"> 기록하기 </button>
+            </div>
+
         </div>
     </div>
+
+
+
     </div>
-    </div>
-    </div>
+
+
+
 
 
     <!-- 부트스트랩 카드 적용-->
@@ -302,6 +336,45 @@
         - <button> 태그를 생성해 주세요.
         - <button> 태그안에 `card-button` 클래스를 부여해 주세요.
         - 카드에 내용은 자유롭게 채워 주세요. -->
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://akamai.pizzahut.co.kr/2020pizzahut-prod/public/img/menu/RPPZ1893_RPEG0016_RPDO0003_l.png"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">하와이안 피자</h5>
+                        <p class="card-text">⭐⭐⭐⭐</p>
+                        <p class="card-text">이건 꼭 먹어봐야 해!</p>
+                        <p class="card-button">주문하기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://www.francoislambert.one/cdn/shop/articles/mac_poulet_corn_flakes.webp?v=1723557298"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">크리스피 버거</h5>
+                        <p class="card-text">⭐⭐⭐</p>
+                        <p class="card-text">최고의 수제버거!</p>
+                        <p class="card-button">주문하기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/03/11/3d00e9089bf5242a805eaf791640a3b21.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">해물 라면</h5>
+                        <p class="card-text">⭐⭐⭐⭐⭐</p>
+                        <p class="card-text">국물이 아주 시원해요.</p>
+                        <p class="card-button">주문하기</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container2">
